@@ -32,9 +32,9 @@ SSH keys
 * The homepage of this project is called index.html which has the code for the landing page for the basic portfolio website, which contains the information about the developer.
 
 ## Screenshots of the code-quiz web application
-* Here is a screenshot of the landing page of the Day-Planner application
+* Here is a screenshot of the landing page of the weather-dashboard application
 ![alt landingPage](assets/images/landingPage.png)
-* Here is a screenshot of the application when a future event is created
-![alt viewFutureEvent](assets/images/viewFutureEvent.png)
+* Here is a screenshot of the application when you search for weather in a particular city 
+![alt searchResults](assets/images/searchResults.png)
 
 
