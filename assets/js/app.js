@@ -20,12 +20,17 @@
 
         // Log the resulting object
         console.log(response);
+        console.log((response.main.temp).toFixed(1));
+        console.log(response.main.humidity);
+        console.log(response.wind.speed);
+        console.log(response.name);
 
         // Transfer content to HTML
         // $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-        // $(".wind").text("Wind Speed: " + response.wind.speed);
-        // $(".humidity").text("Humidity: " + response.main.humidity);
         // $(".temp").text("Temperature (F) " + response.main.temp);
+        // $(".humidity").text("Humidity: " + response.main.humidity);
+        // $(".wind").text("Wind Speed: " + response.wind.speed);
+       
 
         // // Converts the temp to Kelvin with the below formula
         // var tempF = (response.main.temp - 273.15) * 1.80 + 32;
