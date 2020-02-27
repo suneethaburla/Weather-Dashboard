@@ -24,33 +24,34 @@
     <div class="row ">
       <div class="col-4 ">
         <div class="row">
-          Search for a city:
+          <h4>Search for a city:</h4>
         </div><br>
         <div class="row">
           <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <input id ="searchCity" type="text" placeholder="Search">
+            <button id="searchBtn" class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div><br>
-        <div class="row">
-          <ul class="list-group">
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
+          <div class="row">
+          <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
+          </div>
+      
+        <div class="row" id="searchList" >
+          <ul class="list-group" id ="citiesGroup">
+            <li class="list-group-item" id="cityItem"></li>
           </ul>
         </div>
       </div>
-      <div class="col-8 ">
+      <div class="col-8 currentWeather">
         
-        <h2 class="row city">Atlanta</h2>
+        <h2 class="row city"></h2>
+        <h5 class ="row" id="date"></h5>
         
         
-        <div class="row temp">Temperature:</div>
-        <div class="row humidity">Humidity:</div>
-        <div class="row wind-Speed">Wind Speed:</div>
-        <div class="row UV-Index">UV Index:</div>
+        <div class="row temp"></div>
+        <div class="row humidity"></div>
+        <div class="row wind"></div>
+        <div class="row UVIndex"></div>
        
       </div>
 
@@ -69,7 +70,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
