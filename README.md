@@ -50,6 +50,6 @@ SSH keys
 * Here is a screenshot of the landing page of the weather-dashboard application
 ![alt landingPage](assets/images/landingPage.png)
 * Here is a screenshot of the application when you search for weather in a particular city 
-![alt searchResults](assets/images/weather.png)
+![alt searchResults](assets/images/weatherDetails.png)
 
 
