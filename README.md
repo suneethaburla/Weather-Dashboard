@@ -1,19 +1,34 @@
-# Day-Planner
+# Weather-Dashboard
 
-## Project Title: Day-Planner
+## Project Title: Weather-Dashboard
 ## Project Description
-This project describes how to create a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by Jquery code.
+This project describes how to build a weather dashboard application with search functionality to find current weather conditions and the future weather outlook for multiple cities.  This app will run in the browser and feature dynamically updated HTML and CSS powered by Jquery code.
 
-## Play proceeds as follows:
+```
+As a traveler
+I want to see the weather outlook for multiple cities
+so that I can plan a trip accordingly
+```
 
-* The app displays standard business hours (9 a.m. to 5 p.m.). Each time slot represents one hour and contains the following:
+## Features of the application:
+* The app displays the following under current weather conditions:
+* A search field for user to input the name of the city to get the weather details
+    * City
+    * Date
+    * Icon image (visual representation of weather conditions)
+    * Temperature
+    * Humidity
+    * Wind speed
+    * UV index
+* Includes a search history so that users can access their past search terms. 
+* Clicking on the city name will perform a new search that returns current and future conditions for that city.
+* Includes a clear button to clear the search history
+* Includes a 5-Day Forecast below the current weather conditions. Each day for the 5-Day Forecast will display the following:
+    * Date
+    * Icon image (visual representation of weather conditions)
+    * Temperature
+    * Humidity
 
-* The time
-* A field to hold user input
-* A save button
-
-* Clicking on the save button will store the time and user input in localStorage.
-* Near the top of the calendar, the application displays the current day. Additionally, each hour is color coded to reflect whether the time slot is in the past, the present, or the future. This will change depending on the time of day.
 ## Installation
 In order to install this project, follow the instructions below.
 * Prerequisites
@@ -31,10 +46,10 @@ SSH keys
 * There are three main files index.html, contact.html and portfolio.html and assets folder which contains css folder with style.css and reset.css files and an images folder with all the images used in the project
 * The homepage of this project is called index.html which has the code for the landing page for the basic portfolio website, which contains the information about the developer.
 
-## Screenshots of the code-quiz web application
+## Screenshots of the application
 * Here is a screenshot of the landing page of the weather-dashboard application
 ![alt landingPage](assets/images/landingPage.png)
 * Here is a screenshot of the application when you search for weather in a particular city 
-![alt searchResults](assets/images/searchResults.png)
+![alt searchResults](assets/images/weather.png)
 
 

@@ -29,7 +29,7 @@
   }
  .current {
    border:1px solid gray;
-   padding: 40px;
+   padding: 20px;
    margin: 10px;
  }
 
@@ -40,9 +40,6 @@
    padding: 20px;
    text-align: left;
    font-size: 15px;
- }
- .cityIcon {
-   display:inline-block;
  }
 
  .cityIcon>h2,  .cityIcon>span{

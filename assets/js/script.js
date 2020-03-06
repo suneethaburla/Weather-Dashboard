@@ -32,7 +32,7 @@ function getWeather(searchCity) {
             let temp = response.main.temp.toFixed(1);
             let humidity = response.main.humidity;
             let windSpeed = response.wind.speed;
-            let icon =`<img src = "https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png" alt="${response.weather[0].description}" width="25%"></img>`
+            let icon = `<img src = "https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png" alt="${response.weather[0].description}" width="5%"></img>`
             $(".city").text(cityName + " Weather Details");
             $(".temp").text("Temperature (F): " + temp);
             $(".humidity").text("Humidity: " + humidity + "%");
@@ -85,26 +85,22 @@ $("#clearHistory").on("click", function (event) {
     renderSearchHistory();
 });
 
-
 let historyCity = $("#historyCity");
 function renderSearchHistory() {
     historyCity.html("");
-    for (let i=0; i<searchHistory.length; i++) {
+    for (let i = 0; i < searchHistory.length; i++) {
         const historyItem = $("<input>");
-        // <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"></input>
-        // $(myObj).attr({"data-test-1": num1, "data-test-2": num2});
-        historyItem.attr({"type":"text", "readonly":true, "class": "form-control d-block bg-white","value": searchHistory[i] });
-       historyItem.on("click", function (event) {
-           
+        historyItem.attr({ "type": "text", "readonly": true, "class": "form-control d-block bg-white", "value": searchHistory[i] });
+        historyItem.on("click", function (event) {
             getWeather(historyItem.val());
-            console.log((historyItem.val()));
         })
         historyCity.append(historyItem);
     }
 }
-
 renderSearchHistory();
-    if (searchHistory.length > 0) {
-        getWeather(searchHistory[searchHistory.length - 1]);
-    }
+if (searchHistory.length > 0) {
+    getWeather(searchHistory[searchHistory.length - 1]);
+}
+
+
 
