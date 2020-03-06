@@ -41,7 +41,13 @@
    text-align: left;
    font-size: 15px;
  }
+ .cityIcon {
+   display:inline-block;
+ }
 
+ .cityIcon>h2,  .cityIcon>span{
+  display:inline;
+}
  
   
   

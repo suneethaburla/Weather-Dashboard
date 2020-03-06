@@ -25,7 +25,6 @@ function getWeather(searchCity) {
         method: "GET"
     })
         .then(function (response) {
-            console.log(response);
             $('.currentWeather').show();
             let currentDate = moment().format('dddd, MMMM Do YYYY');
             $('#date').text(currentDate);
@@ -33,8 +32,8 @@ function getWeather(searchCity) {
             let temp = response.main.temp.toFixed(1);
             let humidity = response.main.humidity;
             let windSpeed = response.wind.speed;
-            let icon =`<img src = "https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png" alt="${response.weather[0].description}" width="5%"></img>`
-            $(".city").html("<h4>" + cityName + " Weather Details</h4>");
+            let icon =`<img src = "https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png" alt="${response.weather[0].description}" width="25%"></img>`
+            $(".city").text(cityName + " Weather Details");
             $(".temp").text("Temperature (F): " + temp);
             $(".humidity").text("Humidity: " + humidity + "%");
             $(".wind").text("Wind Speed: " + windSpeed + "MPH");
@@ -47,7 +46,6 @@ function getWeather(searchCity) {
                 method: "GET"
             })
                 .then(function (response) {
-                    console.log(response);
                     let UVIndex = response.value;
                     $(".UVIndex").text(UVIndex);
                 });
@@ -60,7 +58,6 @@ function getWeather(searchCity) {
                 method: "GET"
             })
                 .then(function (response) {
-                    console.log(response);
                     let output = '';
                     for (let i = 0; i < 5; i++) {
                         let forecastIndex = i * 8 + 4;
@@ -88,21 +85,26 @@ $("#clearHistory").on("click", function (event) {
     renderSearchHistory();
 });
 
+
+let historyCity = $("#historyCity");
 function renderSearchHistory() {
-
-    let output = '';
-    for (let i = 0; i < searchHistory.length; i++) {
-        let historyItem = $("<input>");
-        output += `
-       <input type="button" id=city${i} onclick="${getWeather(searchHistory[i])}" readonly class="form-control" id="staticEmail" value=${searchHistory[i]}></input>
-
-`;
+    historyCity.html("");
+    for (let i=0; i<searchHistory.length; i++) {
+        const historyItem = $("<input>");
+        // <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"></input>
+        // $(myObj).attr({"data-test-1": num1, "data-test-2": num2});
+        historyItem.attr({"type":"text", "readonly":true, "class": "form-control d-block bg-white","value": searchHistory[i] });
+       historyItem.on("click", function (event) {
+           
+            getWeather(historyItem.val());
+            console.log((historyItem.val()));
+        })
+        historyCity.append(historyItem);
     }
-    $('#historyCity').html(output);
 }
 
-// $("#historyCity").on("click", function (event) {
-//     console.log($(this));
-//     console.log($(this)[0].children[0]);
-//     console.log($(this)[0].children[0].val());
-//     // getWeather(this.val())
+renderSearchHistory();
+    if (searchHistory.length > 0) {
+        getWeather(searchHistory[searchHistory.length - 1]);
+    }
+
