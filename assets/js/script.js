@@ -40,7 +40,7 @@ function getWeather(searchCity) {
             $("#icon").html(icon);
             let lat = response.coord.lat;
             let lon = response.coord.lon;
-            let UVQueryURL = `https://api.openweathermap.org/data/2.5/uvi?appid=8b58730b831d9dfe90f82c5fd73e1a99&lat=${lat}&lon=${lon}`;
+            let UVQueryURL = ` https://api.openweathermap.org/data/2.5/uvi?appid=8b58730b831d9dfe90f82c5fd73e1a99&lat=${lat}&lon=${lon}`;
             $.ajax({
                 url: UVQueryURL,
                 method: "GET"
